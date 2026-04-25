@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 
 const NavContainer = () => {
   return (
-    <div>
+    <div className="navbar">
       <Logo></Logo>
       <Navlist></Navlist>
       <Dropdown></Dropdown>

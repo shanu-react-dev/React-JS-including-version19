@@ -1,7 +1,10 @@
 const Dropdown = () => {
   return (
-    <div>
-      <h1>dropdown</h1>
+    <div className="dropdown">
+      {/* <h1>dropdown</h1> */}
+      <select name="" id="">
+        <option value="upcoming launches">upcoming launches</option>
+      </select>
     </div>
   );
 };
