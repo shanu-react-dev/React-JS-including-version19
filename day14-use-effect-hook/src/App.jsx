@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const App = () => {
   let [apidata, setData] = useState();
   let [count, setCount] = useState(0);
+  let [name, setName] = useState("Shanu");
   async function FetchData() {
     let data = await fetch("https://api.github.com/users");
     console.log(data);
@@ -20,25 +21,28 @@ const App = () => {
   //   });
 
   //!   empty Dependency
-  useEffect(() => {
-    FetchData();
-    return () => {
-      console.log("Cleanup Function");
-    };
-  }, []);
-  //!   With Dependency
   // useEffect(() => {
   //   FetchData();
   //   return () => {
   //     console.log("Cleanup Function");
   //   };
-  // }, [count]);
+  // }, []);
+  //!   With Dependency
+  useEffect(() => {
+    FetchData();
+    return () => {
+      console.log("Cleanup Function");
+    };
+  }, [count, name]);
   return (
     <div>
       <h1>Hii this is App component</h1>
       <h1>{count}</h1>
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <button onClick={() => setCount(count - 1)}>Decrement</button>
+
+      <h2>{name}</h2>
+      <button onClick={() => setName("Sundari")}>Change name</button>
 
       <hr />
 
